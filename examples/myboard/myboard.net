@@ -1,0 +1,37 @@
+Netlist myboard
+
+Exported from netlister $Revision$
+
+EAGLE
+
+Net                   Part                  Pad                 
+
+c                     U4                    2                   
+                      U6                    2                   
+                      U7                    3                   
+
+complicated_name_102  U9                    2                   
+
+b                     U2                    1                   
+                      U4                    1                   
+                      U7                    2                   
+
+f                     U5                    2                   
+                      U6                    1                   
+                      U9                    1                   
+                      U7                    4                   
+
+a                     U1                    1                   
+                      U7                    1                   
+
+VDD                   U19                   1                   
+
+k                     U19                   2                   
+
+h                     U9                    3                   
+
+VSS                   U5                    1                   
+
+j                     U1                    2                   
+
+m                     U10                   4                   

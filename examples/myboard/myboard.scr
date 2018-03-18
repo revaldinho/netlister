@@ -1,0 +1,46 @@
+# Netlist myboard
+
+# Exported from netlister $Revision$
+Layer Top;
+
+# Libraries
+USE dummy ;
+
+# Component Instances
+ADD INV_SKT@dummy U0 R0 (2.0 2.0); # INV
+ADD INV_SKT@dummy U1 R0 (2.0 2.0); # INV
+ADD INV_SKT@dummy U2 R0 (2.0 2.0); # INV
+ADD NAND_SKT@dummy U4 R0 (2.0 2.0); # NAND
+ADD BUF_SKT@dummy U5 R0 (2.0 2.0); # BUF
+ADD BUF_SKT@dummy U6 R0 (2.0 2.0); # BUF
+ADD BUF_SKT@dummy U19 R0 (2.0 2.0); # BUF
+ADD NOR_SKT@dummy U9 R0 (2.0 2.0); # NOR
+ADD SPACER_SKT@dummy U3 R0 (2.0 2.0); # SPACER
+ADD AOI_SKT@dummy U7 R0 (2.0 2.0); # AOI
+ADD AOI_SKT@dummy U10 R0 (2.0 2.0); # AOI
+
+# Define net classes
+CLASS 0 default ;
+CLASS 1 supply ;
+
+# Define net connections
+change class 0  ;
+SIGNAL c U4 2 U6 2 U7 3;
+SIGNAL complicated_name_102 U9 2;
+SIGNAL b U2 1 U4 1 U7 2;
+SIGNAL f U5 2 U6 1 U9 1 U7 4;
+SIGNAL a U1 1 U7 1;
+
+change class 1  ;
+SIGNAL VDD U19 1;
+
+change class 0  ;
+SIGNAL k U19 2;
+SIGNAL h U9 3;
+
+change class 1  ;
+SIGNAL VSS U5 1;
+
+change class 0  ;
+SIGNAL j U1 2;
+SIGNAL m U10 4;

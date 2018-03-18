@@ -1,0 +1,47 @@
+# Maximum Eagle freeware board size is 4.0x3.2" (100x80mm) 
+
+# Draw the maximum board dimension for routing - aim for 66mm height
+
+# better to work in inches for 0.1 inch pad pitch
+Grid default;
+Set Wire_Bend 0;
+Layer Dimension;
+Wire 0  (0 0) (3.1 2.5) (0 0);
+Layer Top;
+
+# PCB-Pool/PCB-Train design rule is actually 0.006/0.006 for wires
+CLASS 0 signal 0.010 0.010
+CLASS 1 supply 0.036 0.018
+
+ROTATE =R90  CAP100NF_1;
+ROTATE =R0   CAP100NF_2;
+ROTATE =R180 CAP100NF_3;
+ROTATE =R180 CAP100NF_4;
+ROTATE =R270 CON1;
+ROTATE =R270 CON2;
+ROTATE =R270 IC1 ; # 65816
+ROTATE =R90  IC2;  # RAM
+ROTATE =R0   IC3;
+ROTATE =R90  IC4 ;
+ROTATE =R90  IC5 ;
+ROTATE =R180 JTAGHDR ;
+ROTATE =R270 PWRHDR ;
+
+MOVE CAP100NF_1    (0.35  2.3)  ;
+MOVE CAP100NF_2    (1.85 2.0)  ;
+MOVE CAP100NF_3    (1.35 0.2)  ;
+MOVE CAP100NF_4    (0.65 0.85)   ;
+MOVE CON1          (2.85 1.25)   ;
+MOVE CON2          (0.15  0.15)  ;
+MOVE IC1           (2.35 1.25)   ;
+MOVE IC2           (1.55 1.05)   ;
+MOVE IC3           (0.65 1.65)   ;
+MOVE IC4           (0.7 0.45)   ;
+MOVE IC5           (0.25  0.7)   ;
+MOVE JTAGHDR       (0.65 2.35)  ;
+MOVE PWRHDR        (0.15 2.3)   ;
+#TEXT Beeb816 L1A Mk1 R0 (0.05 0.05)
+
+#Auto;
+
+Window Fit;
