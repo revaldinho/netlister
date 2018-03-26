@@ -1,0 +1,42 @@
+#
+# Standard library for Commercial CPUs and related peripheral ICs
+#
+#
+# ( "Library_name",
+#   {"module":
+#     ("package",
+#       "library",
+#      {"pinname":"padnumber",
+#       "pinname":"padnumber",
+#      }
+#     )
+#   }
+# )
+#
+('cpu',
+    {"wdc65816":
+        ("DIL40",
+         "ic-package",
+         {"vpb":"1",       "rstb":"40",
+          "rdy":"2",        "vda":"39",
+          "abortb":"3",      "mx":"38",
+          "irqb":"4",    "phi2in":"37",
+          "mlb":"5",         "be":"36",
+          "nmib":"6",         "e":"35",
+          "vpa":"7",       "rdnw":"34",
+          "vcc":"8",         "d0":"33",
+          "a0":"9",          "d1":"32",
+          "a1":"10",         "d2":"31",
+          "a2":"11",         "d3":"30",
+          "a3":"12",         "d4":"29",
+          "a4":"13",         "d5":"28",
+          "a5":"14",         "d6":"27",
+          "a6":"15",         "d7":"26",
+          "a7":"16",        "a15":"25",
+          "a8":"17",        "a14":"24",
+          "a9":"18",        "a13":"23",
+          "a10":"19",       "a12":"22",
+          "a11":"20",      "vss2":"21"
+          }),
+    }
+)

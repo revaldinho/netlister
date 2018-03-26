@@ -1,0 +1,98 @@
+# Standard library for passive components
+#
+#
+# ( "Library_name",
+#   {"module":
+#     ("package",
+#       "EAGLE library",
+#      {"pinname":"padnumber",
+#       "pinname":"padnumber",
+#      }
+#     )
+#   }
+# )
+
+( "rcl",
+  # Basic decoupling caps
+  {
+    "cap100nf":
+    ( "C050-025X075",  # 0.2 inch pin spacing
+      "resistor",
+      { "p0":1,
+        "p1":2
+        }
+    ),
+    # ceramic cap1uf
+    "cap1uf":
+    ( "C050-025X075",  # 0.2 inch pin spacing
+      "resistor",
+      { "p0":1,
+        "p1":2 
+        }
+    ),
+    "cap22uf":
+    ( "E2,5-5",
+      "resistor",
+      { "minus":"-",
+        "plus":"+"
+        }
+    ),
+    "cap47uf":
+    ( "E2,5-5",
+      "resistor",
+      { "minus":"-",
+        "plus":"+"
+        }
+    ),
+    "cap33uf":
+    ( "E2,5-5",
+      "resistor",
+      { "minus":"-",
+        "plus":"+"
+        }
+    ),
+  # SMD decoupling caps
+  "cap100nf_smd":
+    ( "0805",  # 0.2 inch pin spacing
+      "wuerth-elektronik",
+      { "p0":1,
+        "p1":2
+        }
+    ),
+  # 10K RESISTOR
+  "r10k":
+    ( "0204V",
+      "resistor",
+      { "p0":1,
+        "p1":2
+        }
+    ),
+  # RESISTOR
+  "resistor":
+    ( "0207/10",
+      "resistor",
+      { "p0":1,
+        "p1":2
+        }
+    ),
+  # SMD resistor in 0805 standard package
+  "res4k7_smd":
+    ( "0805",  # 0.2 inch pin spacing
+      "wuerth-elektronik",
+      { "p0":1,
+        "p1":2
+        }
+    ),
+   # 14 pin DIL sized osc socket
+   "cmos_osc_14":
+   ( "DIL14/4",
+     "ic-package",
+     {
+     "en":1,
+     "gnd":7,
+     "clk":8,
+     "vdd":14
+     }
+     ),
+  }
+)

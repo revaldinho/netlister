@@ -1,0 +1,26 @@
+('switch',
+  {
+    # DIP6 - hex DIL DIP
+    "DIP6":
+         ("SD4-06",
+          "switch-dil",
+          {"sw0_a":1,     "sw0_b":12,
+           "sw1_a":2,     "sw1_b":11,
+           "sw2_a":3,     "sw2_b":10,
+           "sw3_a":4,     "sw3_b":9,
+           "sw4_a":5,     "sw4_b":8,
+           "sw5_a":6,     "sw5_b":7
+           }),
+
+    # DIP4 - quad DIL DIP
+    "DIP4":
+         ("SD4-04",
+          "switch-dil",
+          {"sw0_a":1,     "sw0_b":8,
+           "sw1_a":2,     "sw1_b":7,
+           "sw2_a":3,     "sw2_b":6,
+           "sw3_a":4,     "sw3_b":5
+           }),
+
+      } 
+)

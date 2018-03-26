@@ -1,0 +1,37 @@
+('test_library',
+      {
+      "INV": ("INV_SKT",
+               "dummy",
+               {"i":1 ,
+                "o":2 
+               }),
+      "BUF": ("BUF_SKT",
+              "dummy",
+              {"i":1 ,
+               "o":2 
+              }),
+      "NAND": ("NAND_SKT",
+               "dummy",
+               {"i0":1 ,
+                "i1":2 ,
+                "o":3 
+                }),
+      "NOR": ("NOR_SKT",
+              "dummy",
+              {"i0":1 ,
+               "i1":2 ,
+                "o":3 
+              }),
+      "AOI": ("AOI_SKT",
+              "dummy",
+              {"i0":1 ,
+               "i1":2 ,
+               "i2":3 ,
+                "o":4 
+              }),
+      "SPACER":("SPACER_SKT",
+                "dummy",
+                { 
+                }),
+        }
+)

@@ -1,0 +1,131 @@
+#
+# Custom library for L1B board components
+#
+('l1b-custom',
+    {
+
+    # plcc84 socket is numbered anticlockwise (viewed from component side)
+    # bevelled corner is top left
+    # 
+    #             CC  G                   TV
+    #          11  9  7  5  3  1 83 81 79 77 75
+    #    C  12 13 10  8  6  4  2 84 82 80 78 76 74 TR
+    #       14 15                            73 72 V
+    #    G  16 17                            71 70
+    #       18 19                            69 68
+    #       20 21                            67 66
+    #    V  22 23                            65 64 V
+    #       24 25                            63 62
+    #    G  26 27                            61 60 G
+    #   JJ  28 29                            59 58 J
+    #    J  30 31                            57 56
+    #       32 34 36 38 40 42 44 46 48 50 52 55 54
+    #          33 35 37 39 41 43 45 47 49 51 53
+    #                 V     G           G
+    #
+    #    Pin Type 	PC84
+    #    I/O/GCK1 	 9
+    #    I/O/GCK2 	10
+    #    I/O/GCK3 	12
+    #    I/O/GTS1 	76
+    #    I/O/GTS2 	77
+    #    I/O/GSR 	74
+    #    TCK 		30
+    #    TDI 		28
+    #    TDO 		59
+    #    TMS 		29
+    #    VCCINT 5V 	38,73,78
+    #    VCCIO 3.3V/5V	22,64
+    #    GND           8,16,27,42,49,60
+
+    "L1B_9572":
+        ("PLCC84SOCK",
+          "ref-packages",
+         {"rdy":1,
+          "cpu_e":2,
+          "cpu_clk_phi2":3,
+          "ram_ceb":4,
+          "bbc_ck_phi2":5,
+          "p6":6,
+          "p7":7,
+          "gnd1":"8",
+          "bbc_ck8":"9",  # gck1
+          "gck2":"10", # gck2
+          "p11":11,
+          "gck3":"12", #gck3
+          "sda":13,
+          "scl":14,
+          "gpio0":"15",
+          "gnd2":"16",
+          "gpio1":"17",
+          "gpio2":"18",
+          "gpio3":"19",
+          "gpio4":"20",
+          "gpio5":"21",
+          "vccio1":"22", 
+          "gpio6":"23",
+          "bbc_addr14":"24",
+          "bbc_addr15":"25",
+          "p26":"26",
+          "gnd3":"27",
+          "tdi":"28",
+          "tms":"29",
+          "tck":"30",
+          "cpu_addr6":"31",
+          "ram_addr17":"32",
+          "bbc_data0":"33",
+          "bbc_data1":"34",
+          "bbc_data2":"35",
+          "bbc_data3":"36",
+          "auxvdd1":"37",
+          "vccint1":"38", 
+          "bbc_data4":"39",
+          "bbc_data5":"40",
+          "auxgnd1":"41",
+          "gnd4":"42",
+          "bbc_data6":"43",
+          "bbc_data7":"44",
+          "ram_addr18":"45",
+          "cpu_addr7":"46",
+          "cpu_addr8":"47",
+          "cpu_addr9":"48",
+          "gnd5":"49",
+          "cpu_addr10":"50",
+          "cpu_addr11":"51",
+          "cpu_addr12":"52",
+          "cpu_addr13":"53",
+          "cpu_addr14":"54",
+          "cpu_addr5":"55",
+          "cpu_addr4":"56",
+          "cpu_addr15":"57",
+          "cpu_addr3":"58",
+          "tdo":"59",
+          "gnd6":"60",
+          "cpu_addr2":"61",
+          "cpu_data7":"62",
+          "cpu_addr1":"63",
+          "vccio2":"64", # vccio
+          "cpu_addr0":"65",
+          "cpu_data6":"66",
+          "cpu_data0":"67",
+          "cpu_data5":"68",
+          "cpu_data1":"69",
+          "cpu_data4":"70",
+          "cpu_data2":"71",
+          "cpu_data3":"72",
+          "vccint2":"73", # vccint
+          "rstb":"74", #gsr
+          "sync":"75",
+          "bbc_ck_phi0":"76", #gts1
+          "cpu_rdnw":"77", #gts2
+          "vccint3":"78",
+          "bbc_rdnw":"79",
+          "ram_addr16":"80",
+          "bbc_ck_phi1":"81",
+          "cpu_vda":"82",
+          "cpu_vpa":"83",
+          "cpu_vpb":"84",
+         }),
+
+    }
+)

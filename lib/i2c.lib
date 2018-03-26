@@ -1,0 +1,96 @@
+('i2c',
+  {
+    # Simple keyed header as used on I2C board to match RobotElectronics module pinout
+   "i2cheader":
+   ("22-23-2041",
+    "con-molex",
+    {"vdd":1,
+     "scl":2,
+     "sda":3,
+     "gnd":4,
+    }),
+
+    # I2C Controller
+    "PCD8584":
+         ("DIL20",
+          "ic-package",
+          {"clk":1,       "vdd":20,
+           "sda":2,    "resetb":19,
+           "scl":3,       "wrb":18,
+           "iackb":4,     "csb":17,
+           "intb":5,      "rdb":16,
+           "a0":6,        "db7":15,
+           "db0":7,       "db6":14,
+           "db1":8,       "db5":13,
+           "db2":9,       "db4":12,
+           "vss":10,      "db3":11
+           }),
+    # I2C Controller
+    # Alternative configuration for long distance mode
+    "PCD8584_alt":
+         ("DIL20",
+          "ic-package",
+          {"clk":1,       "vdd":20,
+           "sda_out":2,    "resetb":19,
+           "scl_in":3,       "wrb":18,
+           "sda_in":4,     "csb":17,
+           "scal_out":5,      "rdb":16,
+           "a0":6,        "db7":15,
+           "db0":7,       "db6":14,
+           "db1":8,       "db5":13,
+           "db2":9,       "db4":12,
+           "vss":10,      "db3":11
+           }),
+
+
+    # 8 bit IO Expander
+    "PCF8574":
+         ("DIL16",
+          "ic-package",
+          {"a0":1,    "vdd":16,
+           "a1":2,    "sda":15,
+           "a2":3,    "scl":14,
+           "p0":4,    "int":13,
+           "p1":5,     "p7":12,
+           "p2":6,     "p6":11,
+           "p3":7,     "p5":10,
+           "vss":8,    "p4":9
+           }),
+
+    # 128 x 8 EEPROM 
+    "PCF8581":    
+         ("DIL08",
+          "ic-package",
+          {"a0":1,    "vdd":8,
+           "a1":2,   "test":7,
+           "a2":3,    "scl":6,
+           "vss":4,   "sda":5,
+           }),
+
+    # 256 x 8 SRAM with clock calendar
+    "PCF8583":    
+         ("DIL08",
+          "ic-package",
+          {"osci":1,    "vdd":8,
+           "osco":2,   "intb":7,
+             "a0":3,    "scl":6,
+            "vss":4,    "sda":5,
+           }),
+
+
+    # 8 bit A/D and D/A converter
+    "PCF8591":
+         ("DIL16",
+          "ic-package",
+          {"ain0":1,     "vdd":16,
+           "ain1":2,    "aout":15,
+           "ain2":3,    "vref":14,
+           "ain3":4,    "agnd":13,
+             "a0":5,     "ext":12,
+             "a1":6,     "osc":11,
+             "a2":7,     "scl":10,
+            "vss":8,     "sda":9
+           }),
+
+      } 
+)

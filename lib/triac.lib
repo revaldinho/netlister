@@ -1,0 +1,13 @@
+('triac',
+  {
+    # MCP1700_3302E - 3V3 Linear Reg, 250mA TO92-3 case
+    "MCP1700_3302E":
+         ("TO92-3",
+          "triac",
+          {
+           "vin":"G",
+           "gnd":"A1",           
+           "vout":"A2",
+           }),
+      }
+)
