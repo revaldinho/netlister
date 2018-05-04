@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -150,7 +150,7 @@
 
 - Including selected inner SMD pads assuming R/A pins are soldered</description>
 <packages>
-<package name="TEENSY_3.5">
+<package name="TEENSY_35">
 <description>Teensy 3.5 Package including selected inner pin rows</description>
 <pad name="P1" x="-22.86" y="-7.62" drill="0.9652"/>
 <pad name="P2" x="-20.32" y="-7.62" drill="0.9652"/>
@@ -354,7 +354,7 @@
 </package>
 </packages>
 <symbols>
-<symbol name="TEENSY_3.5">
+<symbol name="TEENSY_35">
 <description>Teensy 3.5 Schematic</description>
 <wire x1="-15.24" y1="27.94" x2="15.24" y2="27.94" width="0.254" layer="94"/>
 <wire x1="15.24" y1="27.94" x2="15.24" y2="-73.66" width="0.254" layer="94"/>
@@ -443,12 +443,13 @@
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="TEENSY_3.5">
+<deviceset name="TEENSY_35">
+<description>Teensy 3.5</description>
 <gates>
-<gate name="G$1" symbol="TEENSY_3.5" x="0" y="15.24"/>
+<gate name="G$1" symbol="TEENSY_35" x="0" y="15.24"/>
 </gates>
 <devices>
-<device name="1" package="TEENSY_3.5">
+<device name="1" package="TEENSY_35">
 <connects>
 <connect gate="G$1" pin="3V3" pad="3V3"/>
 <connect gate="G$1" pin="3V3_2" pad="3V3_2"/>
