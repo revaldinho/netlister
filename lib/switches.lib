@@ -1,5 +1,21 @@
 ('switch',
   {
+
+
+    # DIP8 - octal DIL DIP
+    "DIP8":
+         ("SD4-08",
+          "switch-dil",
+          {"sw0_a":1,     "sw0_b":16,
+           "sw1_a":2,     "sw1_b":15,
+           "sw2_a":3,     "sw2_b":14,
+           "sw3_a":4,     "sw3_b":13,
+           "sw4_a":5,     "sw4_b":12,
+           "sw5_a":6,     "sw5_b":11,
+           "sw6_a":7,     "sw6_b":10,
+           "sw7_a":8,     "sw7_b":9           
+           }),
+
     # DIP6 - hex DIL DIP
     "DIP6":
          ("SD4-06",

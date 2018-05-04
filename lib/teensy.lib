@@ -1,0 +1,73 @@
+# Standard library for Teensy3.5
+#
+# ( "Library_name",
+#   {"module":
+#     ("package",
+#       "library",
+#      {"pinname":"padnumber",
+#       "pinname":"padnumber",
+#      }
+#     )
+#   }
+# )
+#
+('Teensy3.5',
+    # Teensy 3.5 Incl selected inner pads
+    {"teensy3.5":
+        ("TEENSY_3.5",
+         "Teensy35",
+         {"gnd":"GND",       "vin":"VIN",
+          "b16":"P0",       "agnd":"AGND",
+          "b17":"P1", "vdd_3v3_250ma":"3V3_250MA",
+           "d0":"P2",         "c2":"P23",
+          "a12":"P3",         "c1":"P22",
+          "a13":"P4",         "d6":"P21",
+           "d7":"P5",         "d5":"P20",
+           "d4":"P6",         "b2":"P19",
+           "d2":"P7",         "b3":"P18",
+           "d3":"P8",         "b1":"P17",
+           "c3":"P9",         "b0":"P16",
+           "c4":"P10",        "c0":"P15",
+           "c6":"P11",        "d1":"P14",
+           "c7":"P12",        "c5":"P13",
+      "vdd_3v3":"3V3",      "gnd2":"GND2",
+          "e26":"P24",      "dac1":"DAC1",
+          "a5":"P25",       "dac0":"DAC0",
+          "a14":"P26",       "a17":"P39",
+          "a15":"P27",       "c11":"P38",
+          "a16":"P28",       "c10":"P37",
+          "b18":"P29",        "c9":"P36",
+          "b19":"P30",        "c8":"P35",
+          "b10":"P31",        "e25":"P34",
+          "b11":"P32",        "e24":"P33",
+
+          # Inner rows
+
+          "vusb":"VUSB",
+
+          "aref":"AREF",       "nc":"NC",
+           "a10":"A10",       "a26":"A26",
+           "a11":"A11",       "a25":"A25",
+           "e11":"P57",      "gnd1":"GND1",
+           "e10":"P56",      "gnd4":"GND4",
+           "d11":"P55",       
+           "d15":"P54",       
+
+           "d12":"P53",       "a28":"P40",
+           "d13":"P52",       "a29":"P41",
+           "d14":"P51",       "a26":"P42",
+            "b5":"P50",       "b20":"P43",
+            "b4":"P49",       "b22":"P44",
+            "d9":"P48",       "b23":"P45",
+            "d8":"P47",       "b21":"P46",    
+     "vdd_3v3_1":"3V3",       "gnd":"GND",
+
+          # Cross row
+         "reset":"RESET",
+          "prog":"PROG",
+           "gnd":"GND",
+     "vdd_3v3_2":"3V3_2",
+          "vbat":"VBAT",
+          }),
+    }
+)
