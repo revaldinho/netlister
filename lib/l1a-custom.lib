@@ -134,6 +134,13 @@
           "p2":"2",
           "p3":"3",
          }),
+         "hdr1x02":
+         # Simple row of 2 bits (for link)
+        ("1X02",
+          "pinhead",
+         {"p1":"1",
+          "p2":"2"
+         }),
 
          "hdr1x30":
         # Simple row of 30 pins 
