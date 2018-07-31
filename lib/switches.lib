@@ -37,6 +37,13 @@
            "sw2_a":3,     "sw2_b":6,
            "sw3_a":4,     "sw3_b":5
            }),
+    # DIP2 - dual DIL DIP
+    "DIP2":
+         ("SD4-02",
+          "switch-dil",
+          {"sw0_a":1,     "sw0_b":4,
+           "sw1_a":2,     "sw1_b":3,
+           }),
 
       } 
 )
