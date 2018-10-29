@@ -82,6 +82,28 @@
         "p7":9        
         }
     ),
+  # 10K RESISTOR SIL
+  "r10k_sil5":
+    ( "SIL5",
+      "resistor-sil",
+      { "common":1,
+        "p0":2,
+        "p1":3,
+        "p2":4,
+        "p3":5,
+        }
+    ),
+  # 47K RESISTOR SIL
+  "r47k_sil5":
+    ( "SIL5",
+      "resistor-sil",
+      { "common":1,
+        "p0":2,
+        "p1":3,
+        "p2":4,
+        "p3":5,
+        }
+    ),
   # RESISTOR
   "resistor":
     ( "0207/10",
