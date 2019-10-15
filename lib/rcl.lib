@@ -104,6 +104,28 @@
         "p3":5,
         }
     ),
+  # 6K8 RESISTOR SIL
+  "r6k8_sil5":
+    ( "SIL5",
+      "resistor-sil",
+      { "common":1,
+        "p0":2,
+        "p1":3,
+        "p2":4,
+        "p3":5,
+        }
+    ),
+  # 3K3 RESISTOR SIL
+  "r3k3_sil5":
+    ( "SIL5",
+      "resistor-sil",
+      { "common":1,
+        "p0":2,
+        "p1":3,
+        "p2":4,
+        "p3":5,
+        }
+    ),
   # RESISTOR
   "resistor":
     ( "0207/10",

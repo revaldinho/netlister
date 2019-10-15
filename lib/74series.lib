@@ -156,7 +156,6 @@
              "o1":6,    "i2_0":9,
             "vss":7,      "o2":8
            }),
-
     # Quad D-latch with enable
     "SN7475":
          ("DIL16",
@@ -169,6 +168,18 @@
               "d2":6,   "qb2":11,
               "d3":7,    "q2":10,
              "qb3":8,    "q3":9
+           }),
+    # 74126 - QUAD Non inverting tristate buffer, active high enable
+    "SN74126":
+         ("DIL14",
+          "ic-package",
+          { "en0":1,     "vdd":14,
+             "i0":2,     "en3":13,
+             "o0":3,      "i3":12,
+            "en1":4,      "o3":11,
+             "i1":5,     "en2":10,
+             "o1":6,      "i2":9,
+            "vss":7,      "o2":8
            }),
     # 74174 - HEX D register with clear
     "SN74174":
@@ -212,6 +223,20 @@
              "a6":8,     "b5":13,
              "a7":9,     "b6":12,
             "vss":10,    "b7":11
+           }),
+
+    # Triple 3-input OR Gate
+    "SN74HCT4075":
+         ("DIL14",
+          "ic-package",
+          {
+          "i1_0":1,     "vdd":14,
+          "i1_1":2,    "i2_0":13,
+          "i0_0":3,    "i2_1":12,
+          "i0_1":4,    "i2_2":11,
+          "i0_2":5,      "o2":10,
+            "o0":6,      "o1":9,
+           "vss":7,    "i1_2":8,
            }),
 
     # 16x4b FIFO
