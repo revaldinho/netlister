@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE eagle SYSTEM "eagle.dtd">
+<eagle version="6.4">
+<drawing>
+<settings>
+<setting alwaysvectorfont="no"/>
+<setting verticaltext="up"/>
+</settings>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<layers>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="no" active="yes"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="yes"/>
+<layer number="20" name="Dimension" color="24" fill="1" visible="no" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="3" visible="yes" active="yes"/>
+<layer number="30" name="bStop" color="7" fill="6" visible="yes" active="yes"/>
+<layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
+<layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
+<layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
+<layer number="34" name="bFinish" color="6" fill="6" visible="no" active="yes"/>
+<layer number="35" name="tGlue" color="7" fill="4" visible="no" active="yes"/>
+<layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="yes"/>
+<layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="yes"/>
+<layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
+<layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
+<layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
+<layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
+<layer number="88" name="SimResults" color="9" fill="1" visible="no" active="yes"/>
+<layer number="89" name="SimProbes" color="9" fill="1" visible="no" active="yes"/>
+<layer number="90" name="Modules" color="5" fill="1" visible="no" active="yes"/>
+<layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="93" name="Pins" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="94" name="Symbols" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="95" name="Names" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
+</layers>
+<library>
+<packages>
+<package name="50WEDGE">
+<smd name="P1" x="-4.445" y="13.97" dx="3.81" dy="1.9304" layer="1"/>
+<smd name="P2" x="-4.445" y="13.97" dx="3.81" dy="1.9304" layer="16"/>
+<smd name="P3" x="-4.445" y="11.43" dx="3.81" dy="1.9304" layer="1"/>
+<smd name="P4" x="-4.445" y="11.43" dx="3.81" dy="1.9304" layer="16"/>
+<smd name="P5" x="-4.445" y="8.89" dx="3.81" dy="1.9304" layer="1"/>
+<smd name="P6" x="-4.445" y="8.89" dx="3.81" dy="1.9304" layer="16"/>
+<smd name="P7" x="-4.445" y="6.35" dx="3.81" dy="1.9304" layer="1"/>
+<smd name="P8" x="-4.445" y="6.35" dx="3.81" dy="1.9304" layer="16"/>
+<smd name="P9" x="-4.445" y="3.81" dx="3.81" dy="1.9304" layer="1"/>
+<smd name="P10" x="-4.445" y="3.81" dx="3.81" dy="1.9304" layer="16"/>
+<smd name="P11" x="-4.445" y="1.27" dx="3.81" dy="1.9304" layer="1"/>
+<smd name="P12" x="-4.445" y="1.27" dx="3.81" dy="1.9304" layer="16"/>
+<smd name="P13" x="-4.445" y="-1.27" dx="3.81" dy="1.9304" layer="1"/>
+<smd name="P14" x="-4.445" y="-1.27" dx="3.81" dy="1.9304" layer="16"/>
+<smd name="P15" x="-4.445" y="-3.81" dx="3.81" dy="1.9304" layer="1"/>
+<smd name="P16" x="-4.445" y="-3.81" dx="3.81" dy="1.9304" layer="16"/>
+<smd name="P17" x="-4.445" y="-6.35" dx="3.81" dy="1.9304" layer="1"/>
+<smd name="P18" x="-4.445" y="-6.35" dx="3.81" dy="1.9304" layer="16"/>
+<smd name="P19" x="-4.445" y="-8.89" dx="3.81" dy="1.9304" layer="1"/>
+<smd name="P20" x="-4.445" y="-8.89" dx="3.81" dy="1.9304" layer="16"/>
+<smd name="P21" x="-4.445" y="-11.43" dx="3.81" dy="1.9304" layer="1"/>
+<smd name="P22" x="-4.445" y="-11.43" dx="3.81" dy="1.9304" layer="16"/>
+<smd name="P23" x="-4.445" y="-13.97" dx="3.81" dy="1.9304" layer="1"/>
+<smd name="P24" x="-4.445" y="-13.97" dx="3.81" dy="1.9304" layer="16"/>
+<smd name="P25" x="-4.445" y="-16.51" dx="3.81" dy="1.9304" layer="1"/>
+<smd name="P26" x="-4.445" y="-16.51" dx="3.81" dy="1.9304" layer="16"/>
+<smd name="P27" x="-4.445" y="-19.05" dx="3.81" dy="1.9304" layer="1"/>
+<smd name="P28" x="-4.445" y="-19.05" dx="3.81" dy="1.9304" layer="16"/>
+<smd name="P29" x="-4.445" y="-21.59" dx="3.81" dy="1.9304" layer="1"/>
+<smd name="P30" x="-4.445" y="-21.59" dx="3.81" dy="1.9304" layer="16"/>
+<smd name="P31" x="-4.445" y="-24.13" dx="3.81" dy="1.9304" layer="1"/>
+<smd name="P32" x="-4.445" y="-24.13" dx="3.81" dy="1.9304" layer="16"/>
+<smd name="P33" x="-4.445" y="-26.67" dx="3.81" dy="1.9304" layer="1"/>
+<smd name="P34" x="-4.445" y="-26.67" dx="3.81" dy="1.9304" layer="16"/>
+<smd name="P35" x="-4.445" y="-29.21" dx="3.81" dy="1.9304" layer="1"/>
+<smd name="P36" x="-4.445" y="-29.21" dx="3.81" dy="1.9304" layer="16"/>
+<smd name="P37" x="-4.445" y="-31.75" dx="3.81" dy="1.9304" layer="1"/>
+<smd name="P38" x="-4.445" y="-31.75" dx="3.81" dy="1.9304" layer="16"/>
+<smd name="P39" x="-4.445" y="-34.29" dx="3.81" dy="1.9304" layer="1"/>
+<smd name="P40" x="-4.445" y="-34.29" dx="3.81" dy="1.9304" layer="16"/>
+<smd name="P41" x="-4.445" y="-36.83" dx="3.81" dy="1.9304" layer="1"/>
+<smd name="P42" x="-4.445" y="-36.83" dx="3.81" dy="1.9304" layer="16"/>
+<smd name="P43" x="-4.445" y="-39.37" dx="3.81" dy="1.9304" layer="1"/>
+<smd name="P44" x="-4.445" y="-39.37" dx="3.81" dy="1.9304" layer="16"/>
+<smd name="P45" x="-4.445" y="-41.91" dx="3.81" dy="1.9304" layer="1"/>
+<smd name="P46" x="-4.445" y="-41.91" dx="3.81" dy="1.9304" layer="16"/>
+<smd name="P47" x="-4.445" y="-44.45" dx="3.81" dy="1.9304" layer="1"/>
+<smd name="P48" x="-4.445" y="-44.45" dx="3.81" dy="1.9304" layer="16"/>
+<smd name="P49" x="-4.445" y="-46.99" dx="3.81" dy="1.9304" layer="1"/>
+<smd name="P50" x="-4.445" y="-46.99" dx="3.81" dy="1.9304" layer="16"/>
+<rectangle x1="-2.8575" y1="-47.9425" x2="1.27" y2="-46.0375" layer="1"/>
+<rectangle x1="-2.54" y1="-45.4025" x2="1.27" y2="-43.4975" layer="1"/>
+<rectangle x1="-2.8575" y1="-42.8625" x2="1.27" y2="-40.9575" layer="1"/>
+<rectangle x1="-2.8575" y1="-40.3225" x2="1.27" y2="-38.4175" layer="1"/>
+<rectangle x1="-2.8575" y1="-37.7825" x2="1.27" y2="-35.8775" layer="1"/>
+<rectangle x1="-2.54" y1="-35.2425" x2="1.27" y2="-33.3375" layer="1"/>
+<rectangle x1="-2.8575" y1="-32.7025" x2="1.27" y2="-30.7975" layer="1"/>
+<rectangle x1="-2.54" y1="-30.1625" x2="1.27" y2="-28.2575" layer="1"/>
+<rectangle x1="-2.8575" y1="-27.6225" x2="1.27" y2="-25.7175" layer="1"/>
+<rectangle x1="-2.8575" y1="-25.0825" x2="1.27" y2="-23.1775" layer="1"/>
+<rectangle x1="-2.54" y1="-22.5425" x2="1.27" y2="-20.6375" layer="1"/>
+<rectangle x1="-2.8575" y1="-20.0025" x2="1.27" y2="-18.0975" layer="1"/>
+<rectangle x1="-2.8575" y1="-17.4625" x2="1.27" y2="-15.5575" layer="1"/>
+<rectangle x1="-2.8575" y1="-14.9225" x2="1.27" y2="-13.0175" layer="1"/>
+<rectangle x1="-2.54" y1="-12.3825" x2="1.27" y2="-10.4775" layer="1"/>
+<rectangle x1="-2.54" y1="-9.8425" x2="1.27" y2="-7.9375" layer="1"/>
+<rectangle x1="-2.54" y1="-7.3025" x2="1.27" y2="-5.3975" layer="1"/>
+<rectangle x1="-2.8575" y1="-4.7625" x2="1.27" y2="-2.8575" layer="1"/>
+<rectangle x1="-2.54" y1="-2.2225" x2="1.27" y2="-0.3175" layer="1"/>
+<rectangle x1="-2.8575" y1="0.3175" x2="1.27" y2="2.2225" layer="1"/>
+<rectangle x1="-2.8575" y1="2.8575" x2="1.27" y2="4.7625" layer="1"/>
+<rectangle x1="-2.8575" y1="5.3975" x2="1.27" y2="7.3025" layer="1"/>
+<rectangle x1="-2.54" y1="7.9375" x2="1.27" y2="9.8425" layer="1"/>
+<rectangle x1="-2.8575" y1="10.4775" x2="1.27" y2="12.3825" layer="1"/>
+<rectangle x1="-2.8575" y1="13.0175" x2="1.27" y2="14.9225" layer="1"/>
+<rectangle x1="-2.8575" y1="13.0175" x2="1.27" y2="14.9225" layer="16"/>
+<rectangle x1="-2.8575" y1="10.4775" x2="1.27" y2="12.3825" layer="16"/>
+<rectangle x1="-2.8575" y1="7.9375" x2="1.27" y2="9.8425" layer="16"/>
+<rectangle x1="-2.8575" y1="5.3975" x2="1.27" y2="7.3025" layer="16"/>
+<rectangle x1="-2.54" y1="2.8575" x2="1.27" y2="4.7625" layer="16"/>
+<rectangle x1="-2.54" y1="0.3175" x2="1.27" y2="2.2225" layer="16"/>
+<rectangle x1="-2.54" y1="-2.2225" x2="1.27" y2="-0.3175" layer="16"/>
+<rectangle x1="-2.8575" y1="-4.7625" x2="1.27" y2="-2.8575" layer="16"/>
+<rectangle x1="-2.8575" y1="-7.3025" x2="1.27" y2="-5.3975" layer="16"/>
+<rectangle x1="-2.8575" y1="-9.8425" x2="1.27" y2="-7.9375" layer="16"/>
+<rectangle x1="-2.8575" y1="-12.3825" x2="1.27" y2="-10.4775" layer="16"/>
+<rectangle x1="-2.54" y1="-14.9225" x2="1.27" y2="-13.0175" layer="16"/>
+<rectangle x1="-2.8575" y1="-17.4625" x2="1.27" y2="-15.5575" layer="16"/>
+<rectangle x1="-2.8575" y1="-20.0025" x2="1.27" y2="-18.0975" layer="16"/>
+<rectangle x1="-2.8575" y1="-22.5425" x2="1.27" y2="-20.6375" layer="16"/>
+<rectangle x1="-2.8575" y1="-25.0825" x2="1.27" y2="-23.1775" layer="16"/>
+<rectangle x1="-2.8575" y1="-27.6225" x2="1.27" y2="-25.7175" layer="16"/>
+<rectangle x1="-2.8575" y1="-30.1625" x2="1.27" y2="-28.2575" layer="16"/>
+<rectangle x1="-2.8575" y1="-32.7025" x2="1.27" y2="-30.7975" layer="16"/>
+<rectangle x1="-2.8575" y1="-35.2425" x2="1.27" y2="-33.3375" layer="16"/>
+<rectangle x1="-2.8575" y1="-37.7825" x2="1.27" y2="-35.8775" layer="16"/>
+<rectangle x1="-2.54" y1="-40.3225" x2="1.27" y2="-38.4175" layer="16"/>
+<rectangle x1="-2.54" y1="-42.8625" x2="1.27" y2="-40.9575" layer="16"/>
+<rectangle x1="-2.8575" y1="-45.4025" x2="1.27" y2="-43.4975" layer="16"/>
+<rectangle x1="-2.8575" y1="-47.9425" x2="1.27" y2="-46.0375" layer="16"/>
+<rectangle x1="-2.54" y1="12.7" x2="1.27" y2="15.24" layer="30"/>
+<rectangle x1="-2.54" y1="10.16" x2="1.27" y2="12.7" layer="30"/>
+<rectangle x1="-2.54" y1="8.89" x2="-1.27" y2="10.16" layer="30"/>
+<rectangle x1="-2.54" y1="7.62" x2="1.27" y2="10.16" layer="30"/>
+<rectangle x1="-2.54" y1="5.08" x2="1.27" y2="7.62" layer="30"/>
+<rectangle x1="-2.54" y1="2.54" x2="1.27" y2="5.08" layer="30"/>
+<rectangle x1="-2.54" y1="0" x2="1.27" y2="2.54" layer="30"/>
+<rectangle x1="-2.54" y1="-2.54" x2="1.27" y2="0" layer="30"/>
+<rectangle x1="-2.54" y1="-5.08" x2="1.27" y2="-2.54" layer="30"/>
+<rectangle x1="-2.54" y1="-7.62" x2="1.27" y2="-5.08" layer="30"/>
+<rectangle x1="-2.54" y1="-48.26" x2="1.27" y2="-7.62" layer="30"/>
+<rectangle x1="-2.54" y1="-48.26" x2="1.27" y2="15.24" layer="29"/>
+</package>
+</packages>
+<symbols>
+<symbol name="50WEDGE">
+<pin name="P1" x="-22.86" y="30.48" length="middle"/>
+<pin name="P2" x="2.54" y="30.48" length="middle" rot="R180"/>
+<pin name="P3" x="-22.86" y="27.94" length="middle"/>
+<pin name="P4" x="2.54" y="27.94" length="middle" rot="R180"/>
+<pin name="P5" x="-22.86" y="25.4" length="middle"/>
+<pin name="P6" x="2.54" y="25.4" length="middle" rot="R180"/>
+<pin name="P7" x="-22.86" y="22.86" length="middle"/>
+<pin name="P8" x="2.54" y="22.86" length="middle" rot="R180"/>
+<pin name="P9" x="-22.86" y="20.32" length="middle"/>
+<pin name="P10" x="2.54" y="20.32" length="middle" rot="R180"/>
+<pin name="P11" x="-22.86" y="17.78" length="middle"/>
+<pin name="P12" x="2.54" y="17.78" length="middle" rot="R180"/>
+<pin name="P13" x="-22.86" y="15.24" length="middle"/>
+<pin name="P14" x="2.54" y="15.24" length="middle" rot="R180"/>
+<pin name="P15" x="-22.86" y="12.7" length="middle"/>
+<pin name="P16" x="2.54" y="12.7" length="middle" rot="R180"/>
+<pin name="P17" x="-22.86" y="10.16" length="middle"/>
+<pin name="P18" x="2.54" y="10.16" length="middle" rot="R180"/>
+<pin name="P19" x="-22.86" y="7.62" length="middle"/>
+<pin name="P20" x="2.54" y="7.62" length="middle" rot="R180"/>
+<pin name="P21" x="-22.86" y="5.08" length="middle"/>
+<pin name="P22" x="2.54" y="5.08" length="middle" rot="R180"/>
+<pin name="P23" x="-22.86" y="2.54" length="middle"/>
+<pin name="P24" x="2.54" y="2.54" length="middle" rot="R180"/>
+<pin name="P25" x="-22.86" y="0" length="middle"/>
+<pin name="P26" x="2.54" y="0" length="middle" rot="R180"/>
+<pin name="P27" x="-22.86" y="-2.54" length="middle"/>
+<pin name="P28" x="2.54" y="-2.54" length="middle" rot="R180"/>
+<pin name="P29" x="-22.86" y="-5.08" length="middle"/>
+<pin name="P30" x="2.54" y="-5.08" length="middle" rot="R180"/>
+<pin name="P31" x="-22.86" y="-7.62" length="middle"/>
+<pin name="P32" x="2.54" y="-7.62" length="middle" rot="R180"/>
+<pin name="P33" x="-22.86" y="-10.16" length="middle"/>
+<pin name="P34" x="2.54" y="-10.16" length="middle" rot="R180"/>
+<pin name="P35" x="-22.86" y="-12.7" length="middle"/>
+<pin name="P36" x="2.54" y="-12.7" length="middle" rot="R180"/>
+<pin name="P37" x="-22.86" y="-15.24" length="middle"/>
+<pin name="P38" x="2.54" y="-15.24" length="middle" rot="R180"/>
+<pin name="P39" x="-22.86" y="-17.78" length="middle"/>
+<pin name="P40" x="2.54" y="-17.78" length="middle" rot="R180"/>
+<pin name="P41" x="-22.86" y="-20.32" length="middle"/>
+<pin name="P42" x="2.54" y="-20.32" length="middle" rot="R180"/>
+<pin name="P43" x="-22.86" y="-22.86" length="middle"/>
+<pin name="P44" x="2.54" y="-22.86" length="middle" rot="R180"/>
+<pin name="P45" x="-22.86" y="-25.4" length="middle"/>
+<pin name="P46" x="2.54" y="-25.4" length="middle" rot="R180"/>
+<pin name="P47" x="-22.86" y="-27.94" length="middle"/>
+<pin name="P48" x="2.54" y="-27.94" length="middle" rot="R180"/>
+<pin name="P49" x="-22.86" y="-30.48" length="middle"/>
+<pin name="P50" x="2.54" y="-30.48" length="middle" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="50WEDGE">
+<description>50 Way Card Edge Connector</description>
+<gates>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+</drawing>
+</eagle>
