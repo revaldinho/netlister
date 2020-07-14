@@ -193,6 +193,17 @@
           "p4":"4",
           "p5":"5",
          }),
+         "hdr1x06":
+         # Simple row of 6 bits
+        ("1X06",
+          "pinhead",
+         {"p1":"1",
+          "p2":"2",
+          "p3":"3",
+          "p4":"4",
+          "p5":"5",
+          "p6":"6",
+         }),
          "round_hdr1x05":
          # Simple row of 5 bits with smaller pads
         ("1X05-ROUND",
