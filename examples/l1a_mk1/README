@@ -2,6 +2,7 @@
 
 # (make sure we can access the parser package)
 export CLASSPATH=../../src:$CLASSPATH
+export TERM=xterm
 
 jython ../../src/netlister.py -i l1a_mk1.v \
     -l "../../lib/l1a-custom.lib" \
