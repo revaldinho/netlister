@@ -28,6 +28,17 @@
            "sw5_a":6,     "sw5_b":7
            }),
 
+    # DIP5 - 5 DIL DIP
+    "DIP5":
+         ("SD4-05",
+          "switch-dil",
+          {"sw0_a":1,     "sw0_b":10,
+           "sw1_a":2,     "sw1_b":9,
+           "sw2_a":3,     "sw2_b":8,
+           "sw3_a":4,     "sw3_b":7,
+           "sw4_a":5,     "sw4_b":6,           
+           }),
+
     # DIP4 - quad DIL DIP
     "DIP4":
          ("SD4-04",
@@ -37,7 +48,8 @@
            "sw2_a":3,     "sw2_b":6,
            "sw3_a":4,     "sw3_b":5
            }),
-    # DIP2 - dual DIL DIP
+
+# DIP2 - dual DIL DIP
     "DIP2":
          ("SD4-02",
           "switch-dil",
