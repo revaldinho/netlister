@@ -188,6 +188,12 @@ def create_eagle_scr( board_name, components, libs, supply_nets ) :
             else:
                 print "ERROR : cannot find pin name %s in mapping for %s" % (pin,comp)
         outputlines.append( ' '.join(signal_list) + ';')
+
+    # Write out some defaults for Polygon handling
+    outputlines.append("change Thermals On ;")
+    outputlines.append("change Isolate 0.015 ;")
+    outputlines.append("change Orphans Off ;")
+        
     return '\n'.join(outputlines) + '\n'
 
 

@@ -292,7 +292,7 @@
              "d3":8,     "d4":13,
              "q3":9,     "q4":12,
             "vss":10,    "clk":11
-           }),
+           }), 
     # Octal Latch - different pinout from 373
     "SN74573":
          ("DIL20",
@@ -308,7 +308,22 @@
              "d7":9,     "q7":12,
             "vss":10,    "le":11
            }),
-    # Octal transceiver
+    # Octal DFF Latch - different pinout from 374
+    "SN74574":
+         ("DIL20",
+          "ic-package",
+          { "oeb":1,    "vdd":20,
+             "d0":2,     "q0":19,
+             "d1":3,     "q1":18,
+             "d2":4,     "q2":17,
+             "d3":5,     "q3":16,
+             "d4":6,     "q4":15,
+             "d5":7,     "q5":14,
+             "d6":8,     "q6":13,
+             "d7":9,     "q7":12,
+            "vss":10,    "clock":11
+           }),
+   # Octal transceiver
     "LVC74245":
          ("DIL20",
           "ic-package",

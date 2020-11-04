@@ -81,6 +81,14 @@
         }
     ),
 
+ "vresistor":
+    ( "0204V",
+      "resistor",
+      { "p0":1,
+        "p1":2
+        }
+    ),
+
 
   # 10K RESISTOR
   "r10k":
