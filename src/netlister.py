@@ -11,6 +11,7 @@ g_lib_comp_list = []
 g_comp_lib_dict = {}
 g_net_fanout_table = dict()
 g_warnings = dict()
+g_fanout_check=False
 
 def module_declaration(p):
     """
@@ -269,6 +270,26 @@ def link_netlist( components, nets, libs ):
             if p not in mapping :
                 warning( "INST-2", "pin %s of component instance %s (type %s) is not connected" % (p, inst, comp))
 
+            
+    # additional checks
+    if g_fanout_check:
+        print ("Net Fanout Table\n")        
+        line = []
+        for i in range (0,4):
+            line.append("%-16s :  #" % "Net Name")
+        print(' |'.join(line))
+        line = []
+        for i in range (0,4):
+            line.append("%-16s------" % ( 16*'-'))
+        print('|'.join(line))
+        i=0
+        line = []
+        for n in sorted(nets):
+            line.append("%-16s :%3d" % ( n, len(g_net_fanout_table[n])))
+            i+=1
+            if i % 4==0 :
+                print (' |'.join(line))
+                line = []
 
 
 def usage():
@@ -302,6 +323,8 @@ def usage():
                                   SCR output to add component placement or other
                                   Eagle board commands which can't be expressed
                                   in the source netlist.
+    -u  --fanout                  write a net fanout table to help check net
+                                  connections
     -h  --help                    print this usage message.
 
   EXAMPLES
@@ -316,6 +339,9 @@ def main( argv ):
     """ 
     Command line option parsing.
     """
+    global g_fanout_check
+
+
     infile = ""
     outfile = ""
     format = "scr"
@@ -324,9 +350,9 @@ def main( argv ):
     libfiles = []
     
     try:
-        opts, args = getopt.getopt( argv[1:], "i:o:f:l:d:t:h", [
+        opts, args = getopt.getopt( argv[1:], "i:o:f:l:d:t:hu", [
                 "inputfile=", "outputfile=", "format=", "library=", "header=",
-                "footer=", "help"])
+                "footer=", "help", "fanout"])
     except getopt.GetoptError, err:
         print str(err)
         usage()
@@ -349,6 +375,8 @@ def main( argv ):
             footer = arg
         elif opt in ("-h", "--help" ) :
             usage()
+        elif opt in ("-u", "--fanout" ) :
+            g_fanout_check=True
 
     # Check that all mandatory arguments have been given
     if not ( infile and (format in ["scr","net"]) and libfiles ):
