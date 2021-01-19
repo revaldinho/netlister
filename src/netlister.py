@@ -285,7 +285,10 @@ def link_netlist( components, nets, libs ):
         i=0
         line = []
         for n in sorted(nets):
-            line.append("%-16s :%3d" % ( n, len(g_net_fanout_table[n])))
+            if n in g_net_fanout_table :
+                line.append("%-16s :%3d" % ( n, len(g_net_fanout_table[n])))
+            else:
+                line.append("%-16s :%3d" % ( n, 0))                
             i+=1
             if i % 4==0 :
                 print (' |'.join(line))
