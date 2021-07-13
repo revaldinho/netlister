@@ -208,6 +208,18 @@
              "qb7":7,    "qb5":10,
              "vss":8,    "qb6":9
            }),
+    # 74132 - QUAD 2 INPUT NAND with Schmitt Trigger
+    "SN74132":
+         ("DIL14",
+          "ic-package",
+          {"i0_0":1,     "vdd":14,
+           "i0_1":2,    "i3_1":13,
+             "o0":3,    "i3_0":12,
+           "i1_0":4,      "o3":11,
+           "i1_1":5,    "i2_1":10,
+             "o1":6,    "i2_0":9,
+            "vss":7,      "o2":8
+           }),
     # SN74137 3-to-8 line decoder/demultiplexer with address latch
     "SN74137":
          ("DIL16",

@@ -30,6 +30,34 @@
           "a10":"38",         "a12":"37",
           "a11":"40",        "vss2":"39"
           }),
+     "skt6502_40w_RA": 
+        ("3M_40L",
+          "con-harting-ml",
+          # NB - pin numbering for header sockets is different to
+          #      DIL ICs! And pinout on the header connector is reversed
+          #      with respect to the socket because of the way the IDC
+          #      connectors fall.
+         {"vss":"2",         "rstb":"1",    
+          "rdy":"4",      "phi2out":"3",
+          "phi1out":"6",       "so":"5",
+          "irqb":"8",      "phi0in":"7",
+          "nc1":"10",          "nc3":"9",
+          "nmib":"12",         "nc2":"11",
+          "sync":"14",        "rdnw":"13",
+          "vcc":"16",           "d0":"15",
+          "a0":"18",            "d1":"17",
+          "a1":"20",           "d2":"19",
+          "a2":"22",           "d3":"21",
+          "a3":"24",           "d4":"23",
+          "a4":"26",           "d5":"25",
+          "a5":"28",           "d6":"27",
+          "a6":"30",           "d7":"29",
+          "a7":"32",          "a15":"31",
+          "a8":"34",          "a14":"33",
+          "a9":"36",          "a13":"35",
+          "a10":"38",         "a12":"37",
+          "a11":"40",        "vss2":"39"
+          }),
       "L1A_9572":
         #     39  37  35  33  31  29
         #  40 41  38  36  34  32  30 28

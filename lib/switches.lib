@@ -1,7 +1,5 @@
 ('switch',
   {
-
-
     # DIP8 - octal DIL DIP
     "DIP8":
          ("SD4-08",
@@ -55,6 +53,14 @@
           "switch-dil",
           {"sw0_a":1,     "sw0_b":4,
            "sw1_a":2,     "sw1_b":3,
+           }),
+
+# Switches - Tactile
+    "TSWITCH":
+         ("TL1105",
+          "switch",
+          {"a_0":1,     "b_0":3,
+           "a_1":2,     "b_1":4,
            }),
 
       } 
