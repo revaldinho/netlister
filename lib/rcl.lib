@@ -23,6 +23,13 @@
         "p1":2
         }
     ),
+    "cap18pf":
+    ( "C050-025X075",  # 0.2 inch pin spacing
+      "resistor",
+      { "p0":1,
+        "p1":2
+        }
+    ),
     # ceramic cap1uf
     "cap1uf":
     ( "C050-025X075",  # 0.2 inch pin spacing
