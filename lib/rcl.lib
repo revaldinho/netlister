@@ -120,6 +120,21 @@
         "p7":9        
         }
     ),
+  # 2K2 RESISTOR SIL
+  "r2k2_sil9":
+    ( "SIL9",
+      "resistor-sil",
+      { "common":1,
+        "p0":2,
+        "p1":3,
+        "p2":4,
+        "p3":5,
+        "p4":6,
+        "p5":7,
+        "p6":8,
+        "p7":9        
+        }
+    ),
   # 10K RESISTOR SIL
   "r10k_sil5":
     ( "SIL5",
