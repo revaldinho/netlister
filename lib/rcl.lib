@@ -18,14 +18,14 @@
   {
     "cap100nf":
     ( "C050-025X075",  # 0.2 inch pin spacing
-      "resistor",
+      "rcl",
       { "p0":1,
         "p1":2
         }
     ),
     "cap18pf":
     ( "C050-025X075",  # 0.2 inch pin spacing
-      "resistor",
+      "rcl",
       { "p0":1,
         "p1":2
         }
@@ -33,28 +33,28 @@
     # ceramic cap1uf
     "cap1uf":
     ( "C050-025X075",  # 0.2 inch pin spacing
-      "resistor",
+      "rcl",
       { "p0":1,
         "p1":2 
         }
     ),
     "cap22uf":
     ( "E2,5-5",
-      "resistor",
+      "rcl",
       { "minus":"-",
         "plus":"+"
         }
     ),
     "cap47uf":
     ( "E2,5-5",
-      "resistor",
+      "rcl",
       { "minus":"-",
         "plus":"+"
         }
     ),
     "cap33uf":
     ( "E2,5-5",
-      "resistor",
+      "rcl",
       { "minus":"-",
         "plus":"+"
         }
@@ -71,7 +71,7 @@
   # Small caps
     "smallcap":
     ( "C025-025X050",  # 0.1 inch pin spacing
-      "resistor",
+      "rcl",
       { "p0":1,
         "p1":2
         }
@@ -82,7 +82,7 @@
   # Generic resistor
   "resistor":
     ( "0207/10",
-      "resistor",
+      "rcl",
       { "p0":1,
         "p1":2
         }
@@ -90,22 +90,22 @@
 
  "vresistor":
     ( "0204V",
-      "resistor",
+      "rcl",
       { "p0":1,
         "p1":2
         }
     ),
 
 
-  # 10K RESISTOR
+  # 10K resistor
   "r10k":
     ( "0204V",
-      "resistor",
+      "rcl",
       { "p0":1,
         "p1":2
         }
     ),
-  # 10K RESISTOR SIL
+  # 10K resistor SIL
   "r10k_sil9":
     ( "SIL9",
       "resistor-sil",
@@ -120,7 +120,7 @@
         "p7":9        
         }
     ),
-  # 2K2 RESISTOR SIL
+  # 2K2 resistor SIL
   "r2k2_sil9":
     ( "SIL9",
       "resistor-sil",
@@ -135,7 +135,7 @@
         "p7":9        
         }
     ),
-  # 10K RESISTOR SIL
+  # 10K resistor SIL
   "r10k_sil5":
     ( "SIL5",
       "resistor-sil",
@@ -146,7 +146,7 @@
         "p3":5,
         }
     ),
-  # 47K RESISTOR SIL
+  # 47K resistor SIL
   "r47k_sil5":
     ( "SIL5",
       "resistor-sil",
@@ -157,7 +157,7 @@
         "p3":5,
         }
     ),
-  # 6K8 RESISTOR SIL
+  # 6K8 RCL SIL
   "r6k8_sil5":
     ( "SIL5",
       "resistor-sil",
@@ -168,7 +168,7 @@
         "p3":5,
         }
     ),
-  # 3K3 RESISTOR SIL
+  # 3K3 RCL SIL
   "r3k3_sil5":
     ( "SIL5",
       "resistor-sil",
@@ -179,10 +179,10 @@
         "p3":5,
         }
     ),
-  # RESISTOR
+  # RCL
   "resistor":
     ( "0207/10",
-      "resistor",
+      "rcl",
       { "p0":1,
         "p1":2
         }
