@@ -23,12 +23,12 @@ def module_declaration(p):
     p.eat(")")
     p.eat(";")
     return board_name
-    
+
 
 def warning( type, message ) :
     global g_warnings
 
-    print "warning (%s): %s" % (type, message ) 
+    print "warning (%s): %s" % (type, message )
     if type not in g_warnings:
         g_warnings.update( { type:1 } )
     else:
@@ -114,14 +114,14 @@ def create_eagle_netlist( board_name, components, libs ) :
     Convert to net-oriented list ready for writing out in Eagle format
     """
     outputlines = []
-    
+
     # Print out net data in Eagle-like format
     outputlines.append( "Netlist "+board_name + "\n")
     outputlines.append( "Exported from netlister $Revision$\n")
     outputlines.append( "EAGLE\n")
     outputlines.append( "%-20s  %-20s  %-20s\n" % ( "Net", "Part", "Pad"))
 
-    # Better - but not available in Jython2.2 
+    # Better - but not available in Jython2.2
     # for net in sorted(g_net_fanout_table.iterkeys()) :
     for net in g_net_fanout_table.iterkeys() :
         net_name = net
@@ -141,28 +141,30 @@ def create_eagle_scr( board_name, components, libs, supply_nets ) :
     Convert to Eagle script output
     """
     outputlines = []
-    
+
     outputlines.append( "# Netlist "+board_name + "\n")
     outputlines.append( "# Exported from netlister $Revision$")
     outputlines.append("Layer Top;")
+    # Set default to inches for component creation and pre-placement
+    outputlines.append("Grid Inch;")
     #
-    #Print out the components and place at 0,0
+    #Print out the components and place offset to the origin
     libraries_used = []
     component_data = []
     for  (name, inst, mapping) in components:
         (lib_name, eagle_lib, eagle_comp, pin_mapping) = g_comp_lib_dict[name]
         if eagle_lib not in libraries_used:
             libraries_used.append( eagle_lib)
-        component_data.append( "ADD %s@%s %s R0 (2.0 2.0); # %s" %
+        component_data.append( "ADD %s@%s %s R0 (1.5 1.5); # %s" %
                                (eagle_comp ,eagle_lib,inst, name))
-        
+
     outputlines.append("\n# Libraries")
     for l in libraries_used:
-        outputlines.append("USE %s ;" % l ) 
+        outputlines.append("USE %s ;" % l )
 
     outputlines.append("\n# Component Instances")
     outputlines.extend(component_data)
-    
+
     outputlines.append("\n# Define net classes")
     outputlines.append("CLASS 0 default ;")
     outputlines.append("CLASS 1 supply ;")
@@ -171,7 +173,7 @@ def create_eagle_scr( board_name, components, libs, supply_nets ) :
     outputlines.append("change class 0  ;")
     current_class = 0
 
-    # Better - but not available in Jython2.2 
+    # Better - but not available in Jython2.2
     #for net in sorted(g_net_fanout_table.iterkeys()) :
     for net in g_net_fanout_table.iterkeys() :
         if (net in supply_nets) and (current_class == 0):
@@ -179,13 +181,13 @@ def create_eagle_scr( board_name, components, libs, supply_nets ) :
             current_class = 1
         elif (net not in supply_nets) and (current_class == 1) :
             outputlines.append("\nchange class 0  ;")
-            current_class = 0            
+            current_class = 0
         signal_list = ["SIGNAL "+net]
         for (comp, inst, pin) in g_net_fanout_table[net] :
             # Map the pin to the Eagle library element
             (lib_name, eagle_lib, eagle_name, pin_mapping) = g_comp_lib_dict[comp]
             if ( pin in pin_mapping ) :
-                signal_list.append( inst + " " + str( pin_mapping[pin]) ) 
+                signal_list.append( inst + " " + str( pin_mapping[pin]) )
             else:
                 print "ERROR : cannot find pin name %s in mapping for %s" % (pin,comp)
         outputlines.append( ' '.join(signal_list) + ';')
@@ -194,7 +196,7 @@ def create_eagle_scr( board_name, components, libs, supply_nets ) :
     outputlines.append("change Thermals On ;")
     outputlines.append("change Isolate 0.015 ;")
     outputlines.append("change Orphans Off ;")
-        
+
     return '\n'.join(outputlines) + '\n'
 
 
@@ -202,10 +204,10 @@ def read_library( filename ):
     """
     Eval a library file directly into a python data structure
     """
-    libelements = eval(file(filename).read())    
+    libelements = eval(file(filename).read())
     # Do some rudimentary checking on the contents
     (name, components) = libelements
-    
+
     legal_vlog_name = re.compile("[a-zA-Z]([a-zA-Z0-9_]*)")
     for module_name in components:
         if not legal_vlog_name.match(module_name):
@@ -217,7 +219,7 @@ def read_library( filename ):
             for j in xrange( i+1, len(port_names)):
                 if mapping[port_names[i]] == mapping[port_names[j]]:
                     warning("LIB-2","Library definition for module %s maps both %s and %s to the same package pin %s" % ( module_name, port_names[i], port_names[j], str(mapping[port_names[j]])))
-    
+
 
     return libelements
 
@@ -248,15 +250,15 @@ def link_netlist( components, nets, libs ):
                 found = True
                 break
         if not found:
-            error("ERROR : cannot find component in available libraries: "+comp)   
+            error("ERROR : cannot find component in available libraries: "+comp)
 
     g_net_fanout_table = create_net_fanout_table( components )
-    
+
     # Some brief checking on the completed data structures:
     # 1. Find and report all unused nets and 1-pin nets
     # 2. Find and report unconnected pins on all instances
 
-    for n in nets:        
+    for n in nets:
         if not n in g_net_fanout_table:
             warning ("NET-2", "warning: net %s is declared but not used" % n )
         elif len(g_net_fanout_table[n]) == 1 :
@@ -270,10 +272,10 @@ def link_netlist( components, nets, libs ):
             if p not in mapping :
                 warning( "INST-2", "pin %s of component instance %s (type %s) is not connected" % (p, inst, comp))
 
-            
+
     # additional checks
     if g_fanout_check:
-        print ("Net Fanout Table\n")        
+        print ("Net Fanout Table\n")
         line = []
         for i in range (0,4):
             line.append("%-16s :  #" % "Net Name")
@@ -288,7 +290,7 @@ def link_netlist( components, nets, libs ):
             if n in g_net_fanout_table :
                 line.append("%-16s :%3d" % ( n, len(g_net_fanout_table[n])))
             else:
-                line.append("%-16s :%3d" % ( n, 0))                
+                line.append("%-16s :%3d" % ( n, 0))
             i+=1
             if i % 4==0 :
                 print (' |'.join(line))
@@ -298,7 +300,7 @@ def link_netlist( components, nets, libs ):
 def usage():
     usage_string = """
 
-  USAGE: 
+  USAGE:
 
     The netlists.py program converts verilog-like netlists into a format
     suitable for reading into the Eagle PCB creation tool.
@@ -339,7 +341,7 @@ def usage():
 
 
 def main( argv ):
-    """ 
+    """
     Command line option parsing.
     """
     global g_fanout_check
@@ -351,7 +353,7 @@ def main( argv ):
     header = ""
     footer = ""
     libfiles = []
-    
+
     try:
         opts, args = getopt.getopt( argv[1:], "i:o:f:l:d:t:hu", [
                 "inputfile=", "outputfile=", "format=", "library=", "header=",
@@ -371,7 +373,7 @@ def main( argv ):
             if ':' in arg:
                 libfiles.extend( arg.split(':') )
             else :
-                libfiles.append( arg ) 
+                libfiles.append( arg )
         elif opt in ( "-d", "--header" ) :
             header = arg
         elif opt in ( "-t", "--footer" ) :
@@ -385,7 +387,7 @@ def main( argv ):
     if not ( infile and (format in ["scr","net"]) and libfiles ):
         usage()
 
- 
+
     p = parser(infile)
     libs = []
     for l in libfiles:
@@ -415,15 +417,15 @@ def main( argv ):
             # Assume it's a component
             ( type, inst, map) = component_instance(nets, p )
             if not inst in instances:
-                components.append( ( type, inst, map) ) 
+                components.append( ( type, inst, map) )
                 instances.append( inst)
             else :
                 warning( "INST-1","instance %s appears more than once in netlist on line %s" % \
                     (inst,  str(p.st.lineno())))
-                
+
     p.eat("endmodule")
     # -- end of parsing code
-    
+
 
     link_netlist(components, nets, libs)
 
@@ -436,14 +438,14 @@ def main( argv ):
 
     if header :
         f.write( file(header).read())
-    if format == "net":        
+    if format == "net":
         f.write( create_eagle_netlist( board_name, components, libs))
     else :
         f.write( create_eagle_scr( board_name, components, libs, supply_nets))
     if footer :
         f.write( file(footer).read())
 
-    # Move this to an optional proc. 
+    # Move this to an optional proc.
     # print "Summary"
     # print "number of nets: %d" %len(nets)
     # print "number of instances: %d" % len(instances)
@@ -463,4 +465,3 @@ def main( argv ):
 if __name__ == "__main__":
     main(sys.argv)
     sys.exit(0)
-   
