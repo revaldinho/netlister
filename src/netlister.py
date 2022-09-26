@@ -136,7 +136,7 @@ def create_eagle_netlist( board_name, components, libs ) :
         outputlines.append("")
     return '\n'.join(outputlines)
 
-def create_eagle_scr( board_name, components, libs, supply_nets ) :
+def create_eagle_scr( board_name, components, libs, supply_nets, special_nets ) :
     """
     Convert to Eagle script output
     """
@@ -168,6 +168,7 @@ def create_eagle_scr( board_name, components, libs, supply_nets ) :
     outputlines.append("\n# Define net classes")
     outputlines.append("CLASS 0 default ;")
     outputlines.append("CLASS 1 supply ;")
+    outputlines.append("CLASS 2 special ;")
 
     outputlines.append("\n# Define net connections")
     outputlines.append("change class 0  ;")
@@ -176,10 +177,13 @@ def create_eagle_scr( board_name, components, libs, supply_nets ) :
     # Better - but not available in Jython2.2
     #for net in sorted(g_net_fanout_table.iterkeys()) :
     for net in g_net_fanout_table.iterkeys() :
-        if (net in supply_nets) and (current_class == 0):
+        if (net in supply_nets) and (current_class != 1):
             outputlines.append("\nchange class 1  ;")
             current_class = 1
-        elif (net not in supply_nets) and (current_class == 1) :
+        elif (net in special_nets) and (current_class != 2):
+            outputlines.append("\nchange class 2  ;")
+            current_class = 2
+        elif (net not in supply_nets) and (net not in special_nets) and (current_class != 0) :
             outputlines.append("\nchange class 0  ;")
             current_class = 0
         signal_list = ["SIGNAL "+net]
@@ -227,7 +231,6 @@ def read_library( filename ):
 def link_netlist( components, nets, libs ):
     """
     Check netlist vs the libraries and create a number of mapping structures.
-
     Return false in case of errors (or maybe just bail out if they're fatal).
     """
     global g_lib_comp_list
@@ -299,27 +302,19 @@ def link_netlist( components, nets, libs ):
 
 def usage():
     usage_string = """
-
   USAGE:
-
     The netlists.py program converts verilog-like netlists into a format
     suitable for reading into the Eagle PCB creation tool.
-
   REQUIRED SWITCHES
-
     -i  --inputfile  <filename>   specify the input netlist file
     -f  --format     <net|scr>    specify the output file format
     -l  --library    <filename>   specify at least one library file
-
     If multiple libraries are required, then these can either be entered by
     using multiple -l <filename> pairs, or by quoting all the library filenames
     into a colon separated string.
-
   OPTIONAL SWITCHES
-
     -o  --outputfile <filename>   specify the output file (default is to
                                   write to stdout)
-
     -d  --header    <filename>    specify a file of text which will be prepended
                                   to the output file. Use this for copyright
                                   messages or other boilerplate text as required.
@@ -331,9 +326,7 @@ def usage():
     -u  --fanout                  write a net fanout table to help check net
                                   connections
     -h  --help                    print this usage message.
-
   EXAMPLES
-
     jython netlister.py -i myboard.v -o myboard.scr -f scr -l mylib.lib
     """
     print usage_string
@@ -394,6 +387,7 @@ def main( argv ):
         libs.append(read_library(l))
 
     nets = []
+    special_nets = []
     supply_nets = []
     components = []
     instances = []
@@ -403,13 +397,15 @@ def main( argv ):
     board_name = module_declaration(p)
     while p.token != u"endmodule" and p.token != u"(eof)":
         # See if it's a wire declaration
-        if p.token == u"wire" or p.token.startswith(u"supply"):
+        if p.token == u"wire" or p.token.startswith(u"supply") or p.token==u"special_wire":
             net_type = p.token
             for w in wire_declaration(p) :
                 if not w in nets:
                     nets.append(w)
                     if net_type.startswith(u"supply"):
                         supply_nets.append(w)
+                    elif net_type==u"special_wire":
+                        special_nets.append(w)
                 else:
                     warning( "NET-4","net %s declared more than once on line %s" % \
                     (w,  str(p.st.lineno())))
@@ -441,7 +437,7 @@ def main( argv ):
     if format == "net":
         f.write( create_eagle_netlist( board_name, components, libs))
     else :
-        f.write( create_eagle_scr( board_name, components, libs, supply_nets))
+        f.write( create_eagle_scr( board_name, components, libs, supply_nets, special_nets))
     if footer :
         f.write( file(footer).read())
 
