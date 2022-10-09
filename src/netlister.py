@@ -200,7 +200,6 @@ def create_eagle_scr( board_name, components, libs, supply_nets, special_nets ) 
     outputlines.append("change Thermals On ;")
     outputlines.append("change Isolate 0.015 ;")
     outputlines.append("change Orphans Off ;")
-
     return '\n'.join(outputlines) + '\n'
 
 
@@ -274,7 +273,6 @@ def link_netlist( components, nets, libs ):
         for p in ref_pin_mapping:
             if p not in mapping :
                 warning( "INST-2", "pin %s of component instance %s (type %s) is not connected" % (p, inst, comp))
-
 
     # additional checks
     if g_fanout_check:
