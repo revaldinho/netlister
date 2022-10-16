@@ -378,12 +378,20 @@
           "p24":"24",
           "p25":"25",
           "p26":"26",
-          "p27":"27",
+          "p27":"27",   
           "p28":"28",
           "p29":"29",
           "p30":"30",
          }),
-         "hdr1x39":
+         "DC21":
+         # 2.1mm power jack header
+         ("CUI_PJ-002A",
+         "PJ-002A",
+         {"centre":"1",
+          "barrel1": "2",
+          "barrel2": "3"
+          }),         
+         "hdr1x39":         
         # Simple row of 39 pins
         ("1X39",
           "pinhead",
