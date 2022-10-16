@@ -383,10 +383,18 @@
           "p29":"29",
           "p30":"30",
          }),
-         "DC21":
+         "PJ002A":
          # 2.1mm power jack header
          ("CUI_PJ-002A",
          "PJ-002A",
+         {"centre":"1",
+          "barrel1": "2",
+          "barrel2": "3"
+          }),          
+         "PJ057A":
+         # small 2.1mm power jack header
+         ("CUI_PJ-057A",
+         "PJ-057A",
          {"centre":"1",
           "barrel1": "2",
           "barrel2": "3"
